@@ -1,0 +1,91 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "name": "일기1",
+      "insertDate": 1617351293396,
+      "updateDate": 1617351293396,
+      "code": "J"
+    },
+    {
+      "id": 2,
+      "name": "할일2",
+      "insertDate": 1617351448578,
+      "updateDate": 1617351448578,
+      "code": "D"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "article 1",
+      "content": "갈비맛있음",
+      "views": 20,
+      "insertDate": 1617351293396,
+      "updateDate": 1649667816708,
+      "boardId": 1
+    },
+    {
+      "id": 2,
+      "title": "article 2",
+      "content": "한식 중식 일식",
+      "views": 5,
+      "insertDate": 1617351448578,
+      "updateDate": 1649307892457,
+      "boardId": 2
+    },
+    {
+      "title": "article 3",
+      "content": "sdds",
+      "boardId": "1",
+      "id": 3,
+      "views": 5,
+      "insertDate": 1649307879455,
+      "updateDate": 1649474927933
+    },
+    {
+      "title": "article 4",
+      "content": "sadfdsads",
+      "boardId": "1",
+      "id": 4,
+      "views": 5,
+      "insertDate": 1649307907005,
+      "updateDate": 1649331503383
+    },
+    {
+      "title": "article 5",
+      "content": "a11111",
+      "boardId": "1",
+      "id": 5,
+      "views": 2,
+      "insertDate": 1649331476513,
+      "updateDate": 1649331478109
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "boardId": 2,
+      "content": "comment 1",
+      "articleId": 2,
+      "insertDate": 1617351448578,
+      "updateDate": 1617351448578
+    },
+    {
+      "id": 2,
+      "boardId": 1,
+      "content": "comment 2",
+      "articleId": 1,
+      "insertDate": 1618385359793,
+      "updateDate": 1618385359793
+    },
+    {
+      "id": 3,
+      "boardId": 2,
+      "content": "comment 3",
+      "articleId": 2,
+      "insertDate": 1649307894891,
+      "updateDate": 1649307894891
+    }
+  ]
+}
