@@ -2,8 +2,8 @@
 import { all, call, retry, fork, put, take } from 'redux-saga/effects';
 import qs from "query-string";
 
-import { articleActions } from '../../slices/board/articleSlice';
-import axios from '../../utils/axios';
+import { articleActions } from '~/slices/board/articleSlice';
+import axios from '~/utils/axios';
 // import history from '../utils/history';
 
 const SECOND = 1000;

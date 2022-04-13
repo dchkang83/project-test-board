@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
 
-import { articleActions } from '../../../slices/board/articleSlice'
-import { boardActions } from '../../../slices/board/boardSlice'
+import { articleActions } from '~/slices/board/articleSlice'
+import { boardActions } from '~/slices/board/boardSlice'
 
 const BoardList = () => {
   const params = useParams();

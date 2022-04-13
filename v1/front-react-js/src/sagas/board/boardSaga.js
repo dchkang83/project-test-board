@@ -1,7 +1,8 @@
 // import { all, call, fork, getContext, put, take } from 'redux-saga/effects';
 import { all, call, fork, put, take } from 'redux-saga/effects';
-import { boardActions } from '../../slices/board/boardSlice';
-import axios from '../../utils/axios';
+
+import { boardActions } from '~/slices/board/boardSlice';
+import axios from '~/utils/axios';
 
 function apiGetBoardList() {
   return axios.get(`boards`);

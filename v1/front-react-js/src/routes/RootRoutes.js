@@ -3,14 +3,14 @@
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 
 // import MainLayout from './components/template';
-import { MainLayout, SimpleLayout } from '../views/layouts';
+import { MainLayout, SimpleLayout } from '~/views/layouts';
 
-import Login from '../views/components/login/Login';
+import Login from '~/views/components/login/Login';
 // import Board from '../views/board/Board';
 // import Board from 'components/views/board/Board';
-import BoardRoute from './board/BoardRoute';
+import BoardRoute from '~/routes/board/BoardRoute';
 
-import Users from '../views/components/test/Users';
+import Users from '~/views/components/test/Users';
 
 const RootRoutes = () => (
   <Routes>

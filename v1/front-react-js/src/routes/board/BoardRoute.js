@@ -2,12 +2,11 @@ import React, { lazy, Suspense } from 'react';
 // This is a React Router v6 app
 import { Routes, Route } from "react-router-dom";
 
-// import MainLayout from './components/template';
-import { MainLayout } from '../../views/layouts';
+import { MainLayout } from '~/views/layouts';
 
-const Board = lazy(() => import('../../views/components/board/Board'));
-const BoardList = lazy(() => import('../../views/components/board/BoardList'));
-const BoardForm = lazy(() => import('../../views/components/board/BoardForm'));
+const Board = lazy(() => import('~/views/components/board/Board'));
+const BoardList = lazy(() => import('~/views/components/board/BoardList'));
+const BoardForm = lazy(() => import('~/views/components/board/BoardForm'));
 
 const BoardRoute = () => (
   <Suspense fallback={<div>Loading...</div>}>
