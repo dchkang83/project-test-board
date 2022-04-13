@@ -1,0 +1,14 @@
+{
+  "extends": "./jsconfig.paths.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "./node_modules",
+    "**/node_modules",
+    "dist"
+  ]
+}
