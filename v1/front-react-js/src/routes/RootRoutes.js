@@ -5,7 +5,7 @@ import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 // import MainLayout from './components/template';
 import { MainLayout, SimpleLayout } from '~/views/layouts';
 
-import Login from '~/views/components/login/Login';
+import SignIn from '~/views/components/sign/SignIn';
 // import Board from '../views/board/Board';
 // import Board from 'components/views/board/Board';
 import BoardRoute from '~/routes/board/BoardRoute';
@@ -21,11 +21,9 @@ const RootRoutes = () => (
       <Route path=":redirectParam" component={BoardList} />
     </Route> */}
     
-
-
     <Route element={<SimpleLayout />}>
-      <Route path="/" element={<Navigate replace to="/login" />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Navigate replace to="/sign-in/" />} />
+      <Route path="/sign-in/" element={<SignIn />} />
     </Route>
 
     <Route element={<MainLayout />}>

@@ -10,7 +10,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <Router>
-      <h2>[{ process.env.API_URL }]</h2>
       <App />
     </Router>
   </Provider>

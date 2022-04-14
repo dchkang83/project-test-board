@@ -1,18 +1,25 @@
 import { Component } from "react";
 import { Outlet } from "react-router-dom";
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+
+// const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+
 class MainLayout extends Component {
   render() {
     return (
-      <div>
-        <div>MAIN header</div>
-        <div>--------------------</div>
-        <div>
+      <ThemeProvider theme={theme}>
+        <Container fixed>
           <Outlet />
-        </div>
-        <div>--------------------</div>
-        <div>MAIN footer</div>
-      </div>
+        </Container>
+      </ThemeProvider>
     )
   }
 }
