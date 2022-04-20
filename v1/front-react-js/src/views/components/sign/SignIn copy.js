@@ -33,12 +33,13 @@ const SignIn = () => {
       password: data.get('password'),
     });
 
-    // alert('Dialog 커스터 마이징 후 사용');
-    window.location.href = '/dashboard/Dashboard';
+    alert('Dialog 커스터 마이징 후 사용');
+    window.location.href = '/test/boardList/1';
   };
 
   return (
     <>
+      <CssBaseline />
       <Box
         sx={{
           marginTop: 8,
@@ -55,39 +56,37 @@ const SignIn = () => {
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
-            label="Email Address"
             margin="normal"
             required
             fullWidth
             id="email"
+            label="Email Address"
             name="email"
             autoComplete="email"
             autoFocus
-            value={"dchkang83@naver.com"}
           />
           <TextField
-            label="Password"
             margin="normal"
             required
             fullWidth
             name="password"
+            label="Password"
             type="password"
             id="password"
             autoComplete="current-password"
-            value={"test1234"}
           />
           <FormControlLabel
-            label="Remember me"
             control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
           />
-
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-          >Sign in</Button>
-
+          >
+            Sign In
+          </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -96,7 +95,7 @@ const SignIn = () => {
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {"Sign Up"}
+                {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
           </Grid>

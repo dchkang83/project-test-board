@@ -8,23 +8,27 @@ import { MainLayout, SimpleLayout } from '~/views/layouts';
 import SignIn from '~/views/components/sign/SignIn';
 // import Board from '../views/board/Board';
 // import Board from 'components/views/board/Board';
+import DashboardRoute from '~/routes/dashboard/DashboardRoute';
 import BoardRoute from '~/routes/board/BoardRoute';
 
 import Users from '~/views/components/test/Users';
 
 const RootRoutes = () => (
   <Routes>
+    <Route element={<SimpleLayout />}>
+      <Route path="/" element={<Navigate replace to="/sign-in/" />} />
+      <Route path="/sign-in/" element={<SignIn />} />
+    </Route>
+
+    <Route path="/dashboard/*" element={<DashboardRoute />} />
     <Route path="/test/*" element={<BoardRoute />} />
+
 
     {/* <Route path="/boardList/:boardId" element={<BoardList />} /> */}
     {/* <Route path="/boardList" element={<BoardList />}>
       <Route path=":redirectParam" component={BoardList} />
     </Route> */}
     
-    <Route element={<SimpleLayout />}>
-      <Route path="/" element={<Navigate replace to="/sign-in/" />} />
-      <Route path="/sign-in/" element={<SignIn />} />
-    </Route>
 
     <Route element={<MainLayout />}>
       <Route path="/users/*" element={<Users />} />

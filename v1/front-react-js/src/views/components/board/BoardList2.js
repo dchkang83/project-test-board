@@ -120,7 +120,7 @@ const BoardList = () => {
           status === 200 ?
             <>
               <div>
-                <span>게시판: </span>
+                <span>게시판222: </span>
                 <span>
                   <span>
                     {

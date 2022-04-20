@@ -7,6 +7,7 @@ import { MainLayout } from '~/views/layouts';
 const Board = lazy(() => import('~/views/components/board/Board'));
 const BoardList = lazy(() => import('~/views/components/board/BoardList'));
 const BoardForm = lazy(() => import('~/views/components/board/BoardForm'));
+const BoardList2 = lazy(() => import('~/views/components/board/BoardList2'));
 
 const BoardRoute = () => (
   <Suspense fallback={<div>Loading...</div>}>
@@ -14,6 +15,7 @@ const BoardRoute = () => (
       <Route element={<MainLayout />}>
         <Route path="/board" element={<Board />} />
         <Route path="/boardList/:boardId" element={<BoardList />} />
+        <Route path="/boardList2/:boardId" element={<BoardList2 />} />
         
         {/* <Route path="/:boardId" element={<Board />} /> */}
         {/* <Route path="/" element={<Board />}>

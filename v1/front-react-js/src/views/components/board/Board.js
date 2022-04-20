@@ -10,6 +10,7 @@ class Board extends React.Component {
   //   console.log('props : ', props);
   // }
   
+  
   render() {
     // console.log(this.props);
     // console.log(this.props.match);
