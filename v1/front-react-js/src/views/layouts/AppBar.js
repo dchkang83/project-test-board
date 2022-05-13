@@ -82,7 +82,7 @@ const menuItems = [
     pageURL: "/test/board"
   },
   {
-    menuTitle: "Board1",
+    menuTitle: "게시판-작업중",
     pageURL: "/test/boardList/1"
   },
   {

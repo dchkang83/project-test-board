@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 import { articleActions } from '~/slices/board/articleSlice'
 import { boardActions } from '~/slices/board/boardSlice'
 
-import Pagination from '~/views/components/include/Pagination'
+// import Pagination from '~/views/components/include/Pagination'
 
 
 // TODO. 페이징
@@ -45,6 +45,8 @@ const columns = [
     format: (value) => value.toFixed(2),
   },
 ];
+console.log(columns);
+
 function createData(name, code, population, size) {
   const density = population / size;
   return { name, code, population, size, density };
@@ -67,7 +69,7 @@ const rows = [
   createData('Nigeria', 'NG', 200962417, 923768),
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
-
+console.log(rows);
 
 
 
@@ -80,16 +82,15 @@ const BoardList = () => {
   // console.log(searchParams.get("aaa"));
 
   const { articleList, status, statusText } = useSelector((state) => state.articleReducer);
-  const boardList = useSelector((state) => state.boardReducer.boardList);
-  const board = useSelector((state) => state.boardReducer.board);
+  // const boardList = useSelector((state) => state.boardReducer.boardList);
+  // const board = useSelector((state) => state.boardReducer.board);
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(boardActions.getBoardList());
-
-    // TODO. test
-    dispatch(boardActions.getBoard(1));
-  }, [dispatch]);
+  // React.useEffect(() => {
+  //   dispatch(boardActions.getBoardList());
+  //   // TODO. test
+  //   dispatch(boardActions.getBoard(1));
+  // }, [dispatch]);
 
   React.useEffect(() => {
     // dispatch(boardActions.getBoardList(1));
@@ -114,12 +115,11 @@ const BoardList = () => {
 
   return (
     <div>
-      List
       <>
         {
           status === 200 ?
             <>
-              <div>
+              {/* <div>
                 <span>게시판222: </span>
                 <span>
                   <span>
@@ -134,7 +134,7 @@ const BoardList = () => {
                     }
                   </span>
                 </span>
-              </div>
+              </div> */}
               {articleList.length > 0 ?
                 <div>
                   <div>
@@ -165,7 +165,7 @@ const BoardList = () => {
             </div>
         }
 
-        <Pagination pageCount="100" />
+        {/* <Pagination pageCount="100" /> */}
       </>
 
 

@@ -14,7 +14,7 @@ const BoardRoute = () => (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/board" element={<Board />} />
-        <Route path="/boardList/:boardId" element={<BoardList />} />
+        <Route path="/boardList/:boardType" element={<BoardList />} />
         <Route path="/boardList2/:boardId" element={<BoardList2 />} />
         
         {/* <Route path="/:boardId" element={<Board />} /> */}

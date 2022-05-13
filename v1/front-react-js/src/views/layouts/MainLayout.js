@@ -10,7 +10,7 @@ import AppBar from '~/views/layouts/AppBar';
 // const theme = createTheme();
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    // mode: 'dark',
     // primary: {
       // main: '#1976d2',
     // },

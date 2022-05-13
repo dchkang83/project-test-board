@@ -7,12 +7,9 @@ import axios from '~/utils/axios';
 // import history from '../utils/history';
 
 const SECOND = 1000;
-
-
 function apiGetArticleList(requestParams) {
   return axios.get(`articles?${qs.stringify(requestParams)}`);
 }
-
 
 // api 서버 연결 후 action 호출
 function* asyncGetArticleList(action) {

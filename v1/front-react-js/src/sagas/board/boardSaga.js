@@ -1,11 +1,18 @@
 // import { all, call, fork, getContext, put, take } from 'redux-saga/effects';
-import { all, call, fork, put, take } from 'redux-saga/effects';
+// import { all, call, fork, put, take } from 'redux-saga/effects';
+import { all, call, retry, fork, put, take } from 'redux-saga/effects';
+
+import qs from "query-string";
 
 import { boardActions } from '~/slices/board/boardSlice';
 import axios from '~/utils/axios';
 
-function apiGetBoardList() {
-  return axios.get(`boards`);
+const SECOND = 1000;
+function apiGetBoardList(requestParams) {
+  // return axios.get(`boards`);
+
+  console.log(`boards?${qs.stringify(requestParams)}`);
+  return axios.get(`boards?${qs.stringify(requestParams)}`);
 }
 
 function apiGetBoard(boardId) {
@@ -18,9 +25,11 @@ function apiGetBoard(boardId) {
 }
 
 // api 서버 연결 후 action 호출
-function* asyncGetBoardList() {
+function* asyncGetBoardList(action) {
   try {
-    const response = yield call(apiGetBoardList);
+    // const response = yield call(apiGetBoardList);
+    const response = yield retry(3, 10 * SECOND, apiGetBoardList, { boardType: action.payload });
+
     if (response?.status === 200) {
       yield put(boardActions.getBoardListSuccess(response));
     } else {
@@ -53,8 +62,10 @@ function* asyncGetBoard(action) {
 // action 호출을 감시하는 watch 함수
 function* watchGetBoardList() {
   while (true) {
-    yield take(boardActions.getBoardList);
-    yield call(asyncGetBoardList);
+    // yield take(boardActions.getBoardList);
+    // TODO. 작업중
+    const action = yield take(boardActions.getBoardList);
+    yield call(asyncGetBoardList, action);
   }
 }
 

@@ -2,13 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 // import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
-
-
-import { articleActions } from '~/slices/board/articleSlice'
 import { boardActions } from '~/slices/board/boardSlice'
-
-import Pagination from '~/views/components/include/Pagination'
-
 
 // TODO. 페이징
 import Paper from '@mui/material/Paper';
@@ -20,82 +14,27 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
-const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-  {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
-];
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
-const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
-];
-
-
-
-
-
 const BoardList = () => {
-  const params = useParams();
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // console.log(params);
-  // console.log(params?.boardId);
-  // console.log(searchParams.get("aaa"));
+  // TODO. COLUMNS
+  const columns = [
+    { id: 'id', label: 'Id', minWidth: 170 },
+    { id: 'title', label: 'Title', minWidth: 100 },
+    { id: 'content', label: 'Content', minWidth: 100 },
+    { id: 'insertDate', label: 'insertDate', minWidth: 100, align: 'right' },
+    { id: 'updateDate', label: 'updateDate', minWidth: 100, align: 'right' },
+    { id: 'boardType', label: 'boardType', minWidth: 100 }
+  ];
 
-  const { articleList, status, statusText } = useSelector((state) => state.articleReducer);
-  const boardList = useSelector((state) => state.boardReducer.boardList);
-  const board = useSelector((state) => state.boardReducer.board);
+  const params = useParams();
+  const { boardList, status, statusText } = useSelector((state) => state.boardReducer);
   const dispatch = useDispatch();
 
+
+  // 페이지가 처음 렌더링 되고 난후 useEffect 무조건 한번 실행!
   React.useEffect(() => {
-    dispatch(boardActions.getBoardList());
-
-    // TODO. test
-    dispatch(boardActions.getBoard(1));
-  }, [dispatch]);
-
-  React.useEffect(() => {
-    // dispatch(boardActions.getBoardList(1));
-    dispatch(articleActions.getArticleList(params?.boardId ?? 0));
-  }, [dispatch, params?.boardId]);
-
+    console.log('useEffect');
+    dispatch(boardActions.getBoardList(params?.boardType ?? 0));
+  }, [dispatch, params?.boardType]);
 
 
   // TODO. 페이징
@@ -103,50 +42,37 @@ const BoardList = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event, newPage) => {
+    console.log('handleChangePage');
     setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (event) => {
+    console.log('handleChangeRowsPerPage');
+
+    // TODO. 이렇게 쓰는게 맞나? 확인해봐야함
+    dispatch(boardActions.getBoardList(params?.boardType ?? 0));
+
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
 
-
   return (
-    <div>
-      List
-      <>
+    <>
+      {/* <>
         {
           status === 200 ?
             <>
-              <div>
-                <span>게시판: </span>
-                <span>
-                  <span>
-                    {
-                      boardList.length > 0 && boardList.find((board) => board.id === parseInt(params?.boardId))?.name
-                    }
-                  </span>
-                  <span>
-                    test :
-                    {
-                      board.name
-                    }
-                  </span>
-                </span>
-              </div>
-              {articleList.length > 0 ?
+              {boardList.length > 0 ?
                 <div>
                   <div>
                     {
-                      articleList.map((article, index) =>
-                        <div key={article?.id ?? index}>
-                          <Link to={{ pathname: `/article/${article?.id ?? 0}` }}>
-                            <span>{article?.title ?? ""}</span>
+                      boardList.map((board, index) =>
+                        <div key={board?.id ?? index}>
+                          <Link to={{ pathname: `/board/${board?.id ?? 0}` }}>
+                          <span>{board?.title ?? ""}</span>
                           </Link>
                         </div>
                       )
-
                     }
                   </div>
                 </div>
@@ -164,30 +90,17 @@ const BoardList = () => {
               </div>
             </div>
         }
-
-        <Pagination pageCount="100" />
-      </>
-
-
-      {/* TODO. 페이징 */}
-      <Paper sx={{ width: '100%' }}>
+      </> */}
+      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
-              <TableRow>
-                <TableCell align="center" colSpan={2}>
-                  Country
-                </TableCell>
-                <TableCell align="center" colSpan={3}>
-                  Details
-                </TableCell>
-              </TableRow>
               <TableRow>
                 {columns.map((column) => (
                   <TableCell
                     key={column.id}
                     align={column.align}
-                    style={{ top: 57, minWidth: column.minWidth }}
+                    style={{ minWidth: column.minWidth }}
                   >
                     {column.label}
                   </TableCell>
@@ -195,11 +108,11 @@ const BoardList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows
+              {boardList
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
                   return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
                       {columns.map((column) => {
                         const value = row[column.id];
                         return (
@@ -219,7 +132,7 @@ const BoardList = () => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={rows.length}
+          count={boardList.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
@@ -227,30 +140,9 @@ const BoardList = () => {
         />
       </Paper>
 
-    </div>
+
+    </>
   );
 }
 
 export default BoardList;
-
-
-
-
-// class BoardList extends React.Component {
-
-//   render() {
-//     // console.log(this.props.match)
-//     // const params = useParams();
-//     // const [searchParams, setSearchParams] = useSearchParams();
-
-//     // console.log(params);
-//     // console.log(params?.boardId);
-//     // console.log(searchParams.get("aaa"));
-
-//     return (
-//       <div>
-//         LIST
-//       </div>
-//     );
-//   }
-// }
