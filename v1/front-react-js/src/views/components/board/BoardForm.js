@@ -7,7 +7,7 @@ class BoardForm extends React.Component {
   render() {
     return (
       <div>
-        <h2>BoardForm</h2>        
+        <h2>BoardForm</h2>
       </div>
     )
   }

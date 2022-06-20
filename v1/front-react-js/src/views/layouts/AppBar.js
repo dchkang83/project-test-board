@@ -78,6 +78,10 @@ const menuItems = [
     pageURL: "/dashboard/Dashboard"
   },
   {
+    menuTitle: "Sample-LIST",
+    pageURL: "/sample/lists"
+  },
+  {
     menuTitle: "Board",
     pageURL: "/test/board"
   },

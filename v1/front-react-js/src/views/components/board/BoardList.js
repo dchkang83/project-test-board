@@ -14,6 +14,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
+import Button from '@mui/material/Button';
+
 const BoardList = () => {
   // TODO. COLUMNS
   const columns = [
@@ -91,6 +93,9 @@ const BoardList = () => {
             </div>
         }
       </> */}
+      
+      <Link to="/test/boardList/1"><Button variant="text">등록</Button></Link>
+
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
@@ -139,6 +144,9 @@ const BoardList = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
+
+
+
 
 
     </>

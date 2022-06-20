@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "*.lock": true,
+        "package-lock.json": true,
+        "package.json": true,
+        "tsconfig.json": true
+    },
+    "search.exclude": {
+        "*.lock": true,
+        "package-lock.json": true,
+        "package.json": true,
+        "tsconfig.json": true
+    }
+}

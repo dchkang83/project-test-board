@@ -9,6 +9,7 @@ import SignIn from '~/views/components/sign/SignIn';
 // import Board from '../views/board/Board';
 // import Board from 'components/views/board/Board';
 import DashboardRoute from '~/routes/dashboard/DashboardRoute';
+import SampleRoutes from '~/routes/SampleRoutes';
 import BoardRoute from '~/routes/board/BoardRoute';
 
 import Users from '~/views/components/test/Users';
@@ -21,6 +22,7 @@ const RootRoutes = () => (
     </Route>
 
     <Route path="/dashboard/*" element={<DashboardRoute />} />
+    <Route path="/sample/*" element={<SampleRoutes />} />
     <Route path="/test/*" element={<BoardRoute />} />
 
 
