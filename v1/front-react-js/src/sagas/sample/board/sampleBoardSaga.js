@@ -174,9 +174,11 @@ function* asyncDeleteSampleBoard() {
           // history.push(`/board/${sampleBoard?.id ?? 0}`);
           // navigate(`/board/${sampleBoard?.id ?? 0}`);
       } else {
+          alert('error case 1');
           yield put(sampleBoardActions.deleteSampleBoardFail(response));
       }
   } catch(e) {
+      alert('error case 2');
       console.error(e);
       yield put(sampleBoardActions.deleteSampleBoardFail(e?.response));
       yield alert(`삭제실패 \n Error: ${e?.response?.status}, ${e?.response?.statusText}`);

@@ -53,31 +53,139 @@
       "updateDate": 1656041212249
     },
     {
-      "title": "123",
       "boardType": "1",
-      "content": "123",
+      "title": "aaa",
+      "content": "aaaa",
       "id": 7,
       "views": 0,
-      "insertDate": 1656041212250,
-      "updateDate": 1656041212250
+      "insertDate": 1656045030802,
+      "updateDate": 1656045030802
     },
     {
       "boardType": "1",
-      "title": "sdfsafdsf",
-      "content": "sdd",
+      "title": "aaa",
+      "content": "aaaa",
       "id": 8,
       "views": 0,
-      "insertDate": 1656041276225,
-      "updateDate": 1656041276225
+      "insertDate": 1656045030803,
+      "updateDate": 1656045030803
     },
     {
       "boardType": "1",
-      "title": "sdfsafdsf",
-      "content": "sdd",
+      "title": "aaaaa",
+      "content": "aaaaaa",
       "id": 9,
       "views": 0,
-      "insertDate": 1656041276227,
-      "updateDate": 1656041276227
+      "insertDate": 1656045034145,
+      "updateDate": 1656045034145
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa",
+      "content": "aaaaaa",
+      "id": 10,
+      "views": 0,
+      "insertDate": 1656045034146,
+      "updateDate": 1656045034146
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa2",
+      "content": "2aaaaaa",
+      "id": 11,
+      "views": 0,
+      "insertDate": 1656045036412,
+      "updateDate": 1656045036412
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa3",
+      "content": "2aaaaaa",
+      "id": 13,
+      "views": 0,
+      "insertDate": 1656045038120,
+      "updateDate": 1656045038120
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa3",
+      "content": "2aaaaaa",
+      "id": 14,
+      "views": 0,
+      "insertDate": 1656045038121,
+      "updateDate": 1656045038121
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa4",
+      "content": "2aaaaaa",
+      "id": 15,
+      "views": 0,
+      "insertDate": 1656045039900,
+      "updateDate": 1656045039900
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa4",
+      "content": "2aaaaaa",
+      "id": 16,
+      "views": 0,
+      "insertDate": 1656045039901,
+      "updateDate": 1656045039901
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa5",
+      "content": "2aaaaaa",
+      "id": 17,
+      "views": 0,
+      "insertDate": 1656045041530,
+      "updateDate": 1656045041530
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa5",
+      "content": "2aaaaaa",
+      "id": 18,
+      "views": 0,
+      "insertDate": 1656045041532,
+      "updateDate": 1656045041532
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa7",
+      "content": "2aaaaaa",
+      "id": 19,
+      "views": 0,
+      "insertDate": 1656045045127,
+      "updateDate": 1656045045127
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa7",
+      "content": "2aaaaaa",
+      "id": 20,
+      "views": 0,
+      "insertDate": 1656045045129,
+      "updateDate": 1656045045129
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa6",
+      "content": "2aaaaaa",
+      "id": 21,
+      "views": 0,
+      "insertDate": 1656045046593,
+      "updateDate": 1656045046593
+    },
+    {
+      "boardType": "1",
+      "title": "aaaaa6",
+      "content": "2aaaaaa",
+      "id": 22,
+      "views": 0,
+      "insertDate": 1656045046594,
+      "updateDate": 1656045046594
     }
   ],
   "articles": [

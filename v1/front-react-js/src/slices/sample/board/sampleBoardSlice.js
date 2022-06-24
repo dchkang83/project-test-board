@@ -40,12 +40,12 @@ const reducers = {
     
     updateSampleBoardViews: (state, action) => {},
     updateSampleBoardViewsSuccess: (state, action) => {
-        state.article = action.payload?.data ?? {};
+        state.sampleBoard = action.payload?.data ?? {};
         state.status = action.payload?.status;
         state.statusText = action.payload?.statusText ?? "Success";
     },
     updateSampleBoardViewsFail: (state, action) => {
-        state.article = initialState.article;
+        state.sampleBoard = initialState.sampleBoard;
         state.status = action.payload?.status ?? 500;
         state.statusText = action.payload?.statusText ?? "Network Error";
     },
@@ -68,7 +68,7 @@ const reducers = {
 
     deleteSampleBoard: (state, action) => {},
     deleteSampleBoardSuccess: (state, action) => {
-        state.article = initialState.article;
+        state.sampleBoard = initialState.sampleBoard;
         state.status = action.payload?.status;
         state.statusText = action.payload?.statusText ?? "Success";
     },

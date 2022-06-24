@@ -19,14 +19,22 @@ const SampleBoardDetail = () => {
     dispatch(sampleBoardActions.getSampleBoard(params?.id ?? 0));
   }, [dispatch, params?.id]);
 
+
+
+  function onClickDeleteButton(id) {
+    if (!window.confirm("삭제하시겠습니까?")) return false;
+    dispatch(sampleBoardActions.deleteSampleBoard(id));
+  }
+
+
   return (
     <>
       <div>
         <h2>SampleBoardDetail</h2>
         {sampleBoard?.title}
-    
+
         <Link to={`/sample/lists/modify/${sampleBoard?.id ?? 0}`}><Button variant="text">수정</Button></Link>
-        <Link to="/sample/lists/register"><Button variant="text">삭제</Button></Link>
+        <Button variant="text" onClick={() => onClickDeleteButton(sampleBoard?.id ?? 0)}>삭제</Button>
       </div>
     </>
   )
