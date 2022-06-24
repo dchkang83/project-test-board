@@ -2,11 +2,12 @@
   "boards": [
     {
       "id": 1,
-      "title": "게시판1",
+      "title": "게시판11",
       "content": "111",
       "insertDate": 1617351293396,
       "updateDate": 1617351293396,
-      "boardType": "1"
+      "boardType": "1",
+      "updateData": 1656041239594
     },
     {
       "id": 2,
@@ -23,6 +24,60 @@
       "insertDate": 1617351448578,
       "updateDate": 1617351448578,
       "boardType": 1
+    },
+    {
+      "title": "123",
+      "boardType": "1123",
+      "content": "123",
+      "id": 4,
+      "views": 0,
+      "insertDate": 1656041207360,
+      "updateDate": 1656041207360
+    },
+    {
+      "title": "123",
+      "boardType": "1123",
+      "content": "123",
+      "id": 5,
+      "views": 0,
+      "insertDate": 1656041207362,
+      "updateDate": 1656041207362
+    },
+    {
+      "title": "123",
+      "boardType": "1",
+      "content": "123",
+      "id": 6,
+      "views": 0,
+      "insertDate": 1656041212249,
+      "updateDate": 1656041212249
+    },
+    {
+      "title": "123",
+      "boardType": "1",
+      "content": "123",
+      "id": 7,
+      "views": 0,
+      "insertDate": 1656041212250,
+      "updateDate": 1656041212250
+    },
+    {
+      "boardType": "1",
+      "title": "sdfsafdsf",
+      "content": "sdd",
+      "id": 8,
+      "views": 0,
+      "insertDate": 1656041276225,
+      "updateDate": 1656041276225
+    },
+    {
+      "boardType": "1",
+      "title": "sdfsafdsf",
+      "content": "sdd",
+      "id": 9,
+      "views": 0,
+      "insertDate": 1656041276227,
+      "updateDate": 1656041276227
     }
   ],
   "articles": [
@@ -35,7 +90,6 @@
       "insertDate": 1617351293396,
       "updateDate": 1649667816708
     },
-    
     {
       "boardId": 1,
       "title": "article 3",

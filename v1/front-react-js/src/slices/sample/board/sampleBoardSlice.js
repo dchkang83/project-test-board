@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const reducers = {
-    getSampleBoardList: (state, action) => {},
+    getSampleBoardList: (state, action) => { },
     getSampleBoardListSuccess: (state, action) => {
         state.sampleBoardList = action.payload?.data ?? [];
         state.status = action.payload?.status;
@@ -24,7 +24,9 @@ const reducers = {
         state.statusText = action.payload?.statusText ?? "Network Error";
     },
 
-    getSampleBoard: (state, action) => {},
+    getSampleBoard: (state, action) => {
+        console.log("게시글 조회 액션 호출 -- getSampleBoard"); // saga에서 감시용
+    },
     getSampleBoardSuccess: (state, action) => {
         state.sampleBoard = action.payload?.data ?? [];
         state.status = action.payload?.status;
@@ -32,6 +34,45 @@ const reducers = {
     },
     getSampleBoardFail: (state, action) => {
         state.sampleBoard = initialState.sampleBoard
+        state.status = action.payload?.status ?? 500;
+        state.statusText = action.payload?.statusText ?? "Network Error";
+    },
+    
+    updateSampleBoardViews: (state, action) => {},
+    updateSampleBoardViewsSuccess: (state, action) => {
+        state.article = action.payload?.data ?? {};
+        state.status = action.payload?.status;
+        state.statusText = action.payload?.statusText ?? "Success";
+    },
+    updateSampleBoardViewsFail: (state, action) => {
+        state.article = initialState.article;
+        state.status = action.payload?.status ?? 500;
+        state.statusText = action.payload?.statusText ?? "Network Error";
+    },
+
+    postSampleBoard: (state, action) => {},
+    postSampleBoardSuccess: (state, action) => {},
+    postSampleBoardFail: (state, action) => {
+        state.status = action.payload?.status ?? 500;
+        state.statusText = action.payload?.statusText ?? "Network Error";
+    },
+
+    setSampleBoard: (state, action) => {},
+
+    putSampleBoard: (state, action) => {},
+    putSampleBoardSuccess: (state, action) => {},
+    putSampleBoardFail: (state, action) => {
+        state.status = action.payload?.status ?? 500;
+        state.statusText = action.payload?.statusText ?? "Network Error";
+    },
+
+    deleteSampleBoard: (state, action) => {},
+    deleteSampleBoardSuccess: (state, action) => {
+        state.article = initialState.article;
+        state.status = action.payload?.status;
+        state.statusText = action.payload?.statusText ?? "Success";
+    },
+    deleteSampleBoardFail: (state, action) => {
         state.status = action.payload?.status ?? 500;
         state.statusText = action.payload?.statusText ?? "Network Error";
     },

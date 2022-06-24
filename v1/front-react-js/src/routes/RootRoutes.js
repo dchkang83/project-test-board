@@ -14,6 +14,8 @@ import BoardRoute from '~/routes/board/BoardRoute';
 
 import Users from '~/views/components/test/Users';
 
+
+
 const RootRoutes = () => (
   <Routes>
     <Route element={<SimpleLayout />}>
@@ -30,7 +32,7 @@ const RootRoutes = () => (
     {/* <Route path="/boardList" element={<BoardList />}>
       <Route path=":redirectParam" component={BoardList} />
     </Route> */}
-    
+
 
     <Route element={<MainLayout />}>
       <Route path="/users/*" element={<Users />} />
